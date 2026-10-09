@@ -287,8 +287,13 @@ class MeshCanvasVisualizer {
             badgeColor = '#0284c7';
             icon = '⛑️';
         } else if (node.role === 'RELAY') {
-            badgeColor = '#f59e0b';
-            icon = '📶';
+            if (node.node_id.includes('DRONE') || node.node_id.includes('HAPS')) {
+                badgeColor = '#a855f7'; // Stratospheric Purple
+                icon = '🛰️';
+            } else {
+                badgeColor = '#f59e0b';
+                icon = '📶';
+            }
         } else if (node.role === 'SURVIVOR') {
             badgeColor = '#ef4444';
             icon = '🆘';
